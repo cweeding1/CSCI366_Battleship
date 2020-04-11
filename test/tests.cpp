@@ -293,7 +293,7 @@ TEST_F(ClientGetResult, Catch_Bad_Result){
 
 TEST_F(ClientGetResult, Cleanup){
     set_up_result(HIT);
-   client.get_result();
+    client.get_result();
     ifstream f("player_1.result.json");
     ASSERT_FALSE(f.good());
 }
@@ -319,7 +319,6 @@ TEST_F(ClientUpdateActionBoard, Record_Hit){
 
 TEST_F(ClientUpdateActionBoard, Record_Miss){
     client.update_action_board(MISS, 0, 0);
-
     ASSERT_EQ(0, get_diff_dist("player_1.action_board.json", "correct_miss_action_board.json"));
 }
 
